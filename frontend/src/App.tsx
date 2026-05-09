@@ -39,7 +39,7 @@ export default function App() {
 
           <div>
             <h1 className="text-4xl font-bold">
-              Parser Dashboard
+              UPG Parser Dashboard
             </h1>
 
             <p className="text-zinc-500 mt-2">
