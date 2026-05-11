@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine, Base
-from models import Product  
+from models import Base , Product 
 from parser import parse_products
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -37,7 +37,8 @@ def parse_and_save(db: Session = Depends(get_db)):
         db_products = Product(
             title = item["title"],
             price = item["price"],
-            link = item["link"]
+            link = item["link"],
+            image = item["image"]
         )
         db.add(db_products)
     db.commit()

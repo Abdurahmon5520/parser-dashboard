@@ -18,8 +18,10 @@ def parse_products():
             a_tag = product.find('a')
             title_tag = product.find("p", class_="text-element")    
             title = title_tag.text.strip() if title_tag else ""
-
             link = a_tag.get('href') if a_tag else ""
+            img_tag = product.find('img')
+            image = img_tag.get("src") if img_tag else ""
+            print(image)
 
             p_tags = product.find_all("p")
             price = p_tags[3].text.strip()
@@ -27,10 +29,10 @@ def parse_products():
             data.append({
                 "title": title,
                 "price": price,
-                "link": url + link
+                "link": url + link,
+                "image": image
             })
 
         except:
             continue
     return data
-

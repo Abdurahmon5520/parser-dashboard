@@ -8,4 +8,5 @@ class Product(Base):
     title = Column(String)
     price = Column(String)
     link = Column(String)
+    image = Column(String)
     
